@@ -25,71 +25,72 @@
 
         /* Navigation Bar */
         nav {
-        position: fixed;
-        top: 0;
-        width: 100%;
-        background: rgba(27, 31, 56, 0.9);
-        z-index: 1000;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        padding: 10px;
-    }
-    .menu-container {
-        display: flex;
-        align-items: center;
-        justify-content: flex-start;
-    }
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(27, 31, 56, 0.9);
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+        }
+        .menu-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
 
-    /* Hamburger Icon */
-    .hamburger {
-        cursor: pointer;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 30px;
-        height: 20px;
-    }
-    .hamburger .line {
-        width: 100%;
-        height: 4px;
-        background: #3498db;
-        border-radius: 2px;
-        transition: transform 0.3s ease, opacity 0.3s ease;
-    }
+        /* Hamburger Icon */
+        .hamburger {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+        }
+        .hamburger .line {
+            width: 100%;
+            height: 4px;
+            background: #3498db;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
 
-    /* Dropdown Menu */
-    .dropdown {
-        position: absolute;
-        top: 60px;
-        left: 10px;
-        background: #1b1f38;
-        width: 200px;
-        padding: 10px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-        border-radius: 5px;
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-        opacity: 0;
-        visibility: hidden;
-        transform: translateY(-20px);
-        transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-    }
-    .dropdown a {
-        color: #3498db;
-        text-decoration: none;
-        font-size: 16px;
-        padding: 5px 0;
-        transition: color 0.3s ease;
-    }
-    .dropdown a:hover {
-        color: #1abc9c;
-    }
+        /* Dropdown Menu */
+        .dropdown {
+            position: absolute;
+            top: 60px;
+            left: 10px;
+            background: #1b1f38;
+            width: 200px;
+            padding: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 5px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-20px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
+        }
+        .dropdown a {
+            color: #3498db;
+            text-decoration: none;
+            font-size: 16px;
+            padding: 5px 0;
+            transition: color 0.3s ease;
+        }
+        .dropdown a:hover {
+            color: #1abc9c;
+        }
 
-    /* Show Dropdown Menu */
-    .dropdown.show {
-        opacity: 1;
-        visibility: visible;
-        transform: translateY(0);
+        /* Show Dropdown Menu */
+        .dropdown.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
 
         /* Hero Section */
         #hero {
@@ -130,83 +131,6 @@
         .button:hover {
             background-color: #1abc9c;
         }
-
-        /* About Section */
-        #about {
-            background-color: #2c3e50;
-        }
-        #about h2 {
-            font-size: 2.5em;
-            margin-bottom: 20px;
-        }
-        #about p {
-            max-width: 800px;
-            margin: 0 auto;
-            line-height: 1.8;
-            color: #ecf0f1;
-        }
-
-        /* Gallery Section */
-        #gallery {
-            background: #1b1f38;
-            color: white;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        #gallery img {
-            width: 300px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #gallery img:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Video Section */
-        #video {
-            background-color: #2c3e50;
-            color: white;
-            text-align: center;
-        }
-        #video iframe {
-            width: 80%;
-            height: 450px;
-            max-width: 800px;
-            border: none;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        /* Footer */
-        footer {
-            background-color: #1b1f38;
-            padding: 20px 0;
-            text-align: center;
-            color: #95a5a6;
-            font-size: 14px;
-        }
-        footer a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* Animation Effects */
-        .hidden {
-            opacity: 0;
-            transform: translateY(50px);
-        }
-        .show {
-            opacity: 1;
-            transform: translateY(0);
-        }
     </style>
 </head>
 <body>
@@ -221,7 +145,7 @@
             </div>
 
             <!-- Dropdown Menu -->
-            <div id="dropdown-menu" class="dropdown hidden">
+            <div id="dropdown-menu" class="dropdown">
                 <a href="#hero">Home</a>
                 <a href="#about">About</a>
                 <a href="#gallery">Gallery</a>
@@ -229,34 +153,13 @@
             </div>
         </div>
     </nav>
+
     <!-- Hero Section -->
-    <section id="hero" class="hidden">
+    <section id="hero">
         <h1>Welcome to My Professional Page</h1>
         <p>A journey through rowing, life, and technology.</p>
         <img src="images/IMG_7449.jpg" alt="Rowing Image">
         <a class="button" href="https://github.com/magnusrathenborg" target="_blank">Visit My GitHub</a>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="hidden">
-        <h2>About Me</h2>
-        <p>Hi, I'm Magnus Rathenborg, a passionate rower and a tech enthusiast. I balance a life of sports, engineering, and creativity to bring the best of both worlds together. Follow along as I share my journey!</p>
-    </section>
-
-    <!-- Gallery Section -->
-    <section id="gallery" class="hidden">
-        <h2>Gallery</h2>
-        <div>
-            <img src="images/photo1.jpg" alt="Gallery Image 1">
-            <img src="images/photo2.jpg" alt="Gallery Image 2">
-            <img src="images/photo3.jpg" alt="Gallery Image 3">
-        </div>
-    </section>
-
-    <!-- Video Section -->
-    <section id="video" class="hidden">
-        <h2>Watch Me in Action</h2>
-        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
     </section>
 
     <!-- Footer -->
@@ -268,30 +171,11 @@
     </footer>
 
     <script>
-        // Intersection Observer for Animations
-        const sections = document.querySelectorAll('section');
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                    entry.target.classList.remove('hidden');
-                }
-            });
-        }, {
-            threshold: 0.2
-        });
-
-        sections.forEach(section => {
-            observer.observe(section);
-        });
+        // Function to Toggle Dropdown Menu
+        function toggleMenu() {
+            const dropdownMenu = document.getElementById("dropdown-menu");
+            dropdownMenu.classList.toggle("show");
+        }
     </script>
-    <script>
-    function toggleMenu() {
-        const dropdownMenu = document.getElementById("dropdown-menu");
-        dropdownMenu.classList.toggle("show");
-        dropdownMenu.classList.toggle("hidden");
-    }
-</script>
-
 </body>
 </html>
