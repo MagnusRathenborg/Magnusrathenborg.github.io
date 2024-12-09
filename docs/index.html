@@ -3,66 +3,111 @@
 <head>
     <title>My GitHub Page</title>
     <style>
+        /* General Styles */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #1b1f38, #2c3e50);
+            color: white;
             margin: 0;
-            padding: 20px;
+            padding: 0;
             text-align: center;
         }
+
+        /* Navigation Bar */
         nav {
-            margin-bottom: 20px;
+            background-color: #1b1f38;
+            padding: 10px 0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
         }
         nav a {
             color: #3498db;
             text-decoration: none;
-            margin: 0 10px;
+            margin: 0 15px;
+            font-weight: bold;
+            font-size: 16px;
         }
         nav a:hover {
-            text-decoration: underline;
+            color: #1abc9c;
         }
+
+        /* Header Section */
         h1 {
-            color: #2c3e50;
+            color: #1abc9c;
+            margin-top: 40px;
+            font-size: 2.5em;
         }
+        p {
+            font-size: 1.2em;
+            color: #ecf0f1;
+        }
+
+        /* Image */
         img {
-            width: 200px;
-            border-radius: 50%;
+            width: 250px;
+            height: auto;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin: 20px 0;
         }
+
+        /* Button */
         .button {
             display: inline-block;
             margin-top: 20px;
-            padding: 10px 20px;
+            padding: 12px 25px;
             background-color: #3498db;
             color: white;
-            border-radius: 5px;
-            text-decoration: none;
+            border: none;
+            border-radius: 25px;
             font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
         .button:hover {
-            background-color: #2980b9;
+            background-color: #1abc9c;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 30px;
+            background-color: #1b1f38;
+            padding: 10px 0;
+            color: #95a5a6;
+            font-size: 14px;
+        }
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <!-- Step 2: Navigation Links -->
+    <!-- Navigation Bar -->
     <nav>
-        <a href="index.html">Home</a> |
-        <a href="about.html">About Me</a> |
+        <a href="index.html">Home</a>
+        <a href="about.html">About Me</a>
         <a href="https://github.com/magnusrathenborg" target="_blank">GitHub</a>
     </nav>
 
-    <!-- Page Content -->
+    <!-- Main Content -->
     <h1>Welcome to My GitHub Page</h1>
     <p>This is my awesome website hosted on GitHub Pages!</p>
-    <a href="https://www.instagram.com/magnusrathenborg" target="_blank">Instagram</a> | 
-    <a href="https://www.linkedin.com/in/magnusrathenborg" target="_blank">LinkedIn</a>
-
-    <!-- Step 3: Add an Image -->
-    <img src="images/IMG_7449.jpg" alt="My Photo">
-
-    <!-- Call-to-Action Button -->
+    <img src="images/IMG_7449.jpg" alt="Rowing Image">
+    <br>
     <a class="button" href="https://github.com/magnusrathenborg" target="_blank">Visit My GitHub</a>
+
+    <!-- Footer -->
+    <footer>
+        <p>
+            Created by Magnus Rathenborg &copy; 2024 | 
+            <a href="https://www.instagram.com/magnusrathenborg" target="_blank">Instagram</a> | 
+            <a href="https://www.linkedin.com/in/magnusrathenborg" target="_blank">LinkedIn</a>
+        </p>
+    </footer>
 </body>
 </html>
