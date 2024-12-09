@@ -11,15 +11,24 @@
             padding: 20px;
             text-align: center;
         }
+        nav {
+            margin-bottom: 20px;
+        }
+        nav a {
+            color: #3498db;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
         h1 {
             color: #2c3e50;
         }
-        a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+        img {
+            width: 200px;
+            border-radius: 50%;
+            margin: 20px 0;
         }
         .button {
             display: inline-block;
@@ -37,8 +46,23 @@
     </style>
 </head>
 <body>
+    <!-- Step 2: Navigation Links -->
+    <nav>
+        <a href="index.html">Home</a> |
+        <a href="about.html">About Me</a> |
+        <a href="https://github.com/magnusrathenborg" target="_blank">GitHub</a>
+    </nav>
+
+    <!-- Page Content -->
     <h1>Welcome to My GitHub Page</h1>
     <p>This is my awesome website hosted on GitHub Pages!</p>
+    <a href="https://www.instagram.com/magnusrathenborg" target="_blank">Instagram</a> | 
+    <a href="https://www.linkedin.com/in/magnusrathenborg" target="_blank">LinkedIn</a>
+
+    <!-- Step 3: Add an Image -->
+    <img src="profile.jpg" alt="My Photo">
+
+    <!-- Call-to-Action Button -->
     <a class="button" href="https://github.com/magnusrathenborg" target="_blank">Visit My GitHub</a>
 </body>
 </html>
