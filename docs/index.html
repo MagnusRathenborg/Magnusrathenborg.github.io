@@ -164,14 +164,25 @@
     </style>
 </head>
 <body>
-    <!-- Navigation -->
+    <!-- Navigation Bar -->
     <nav>
-        <a href="#hero">Home</a>
-        <a href="#about">About</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#video">Video</a>
-    </nav>
+        <div class="menu-container">
+            <!-- Hamburger Icon -->
+            <div class="hamburger" onclick="toggleMenu()">
+                <div class="line"></div>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
 
+            <!-- Dropdown Menu -->
+            <div id="dropdown-menu" class="dropdown hidden">
+                <a href="#hero">Home</a>
+                <a href="#about">About</a>
+                <a href="#gallery">Gallery</a>
+                <a href="#video">Video</a>
+            </div>
+        </div>
+    </nav>
     <!-- Hero Section -->
     <section id="hero" class="hidden">
         <h1>Welcome to My Professional Page</h1>
