@@ -1,23 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My GitHub Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magnus Rathenborg - Professional Portfolio</title>
     <style>
         /* General Styles */
         body {
             font-family: 'Arial', sans-serif;
-            background: linear-gradient(to bottom, #1b1f38, #2c3e50);
-            color: white;
             margin: 0;
             padding: 0;
+            background-color: #1b1f38;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        /* Section Base Style */
+        section {
+            width: 100%;
+            padding: 100px 20px;
             text-align: center;
+            transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
         /* Navigation Bar */
         nav {
-            background-color: #1b1f38;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(27, 31, 56, 0.9);
             padding: 10px 0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
         }
         nav a {
             color: #3498db;
@@ -25,55 +39,108 @@
             margin: 0 15px;
             font-weight: bold;
             font-size: 16px;
+            transition: color 0.3s ease;
         }
         nav a:hover {
             color: #1abc9c;
         }
 
-        /* Header Section */
-        h1 {
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            background: linear-gradient(to bottom, #1b1f38, #2c3e50);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+        #hero h1 {
+            font-size: 3em;
             color: #1abc9c;
-            margin-top: 40px;
-            font-size: 2.5em;
+            margin-bottom: 10px;
         }
-        p {
+        #hero p {
             font-size: 1.2em;
-            color: #ecf0f1;
+            margin: 0 20px;
         }
-
-        /* Image */
-        img {
-            width: 250px;
-            height: auto;
-            border-radius: 20px;
+        #hero img {
+            width: 200px;
+            border-radius: 50%;
+            margin-top: 20px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            margin: 20px 0;
         }
-
-        /* Button */
         .button {
-            display: inline-block;
             margin-top: 20px;
             padding: 12px 25px;
             background-color: #3498db;
             color: white;
-            border: none;
             border-radius: 25px;
-            font-size: 16px;
-            font-weight: bold;
             text-decoration: none;
-            cursor: pointer;
+            font-weight: bold;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease;
         }
         .button:hover {
             background-color: #1abc9c;
         }
 
+        /* About Section */
+        #about {
+            background-color: #2c3e50;
+        }
+        #about h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+        #about p {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+            color: #ecf0f1;
+        }
+
+        /* Gallery Section */
+        #gallery {
+            background: #1b1f38;
+            color: white;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        #gallery img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        #gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Video Section */
+        #video {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+        }
+        #video iframe {
+            width: 80%;
+            height: 450px;
+            max-width: 800px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
         /* Footer */
         footer {
-            margin-top: 30px;
             background-color: #1b1f38;
-            padding: 10px 0;
+            padding: 20px 0;
+            text-align: center;
             color: #95a5a6;
             font-size: 14px;
         }
@@ -84,30 +151,82 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        /* Animation Effects */
+        .hidden {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+        .show {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
+    <!-- Navigation -->
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="https://github.com/magnusrathenborg" target="_blank">GitHub</a>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#video">Video</a>
     </nav>
 
-    <!-- Main Content -->
-    <h1>Welcome to My GitHub Page</h1>
-    <p>This is my awesome website hosted on GitHub Pages!</p>
-    <img src="images/IMG_7449.jpg" alt="Rowing Image">
-    <br>
-    <a class="button" href="https://github.com/magnusrathenborg" target="_blank">Visit My GitHub</a>
+    <!-- Hero Section -->
+    <section id="hero" class="hidden">
+        <h1>Welcome to My Professional Page</h1>
+        <p>A journey through rowing, life, and technology.</p>
+        <img src="images/IMG_7449.jpg" alt="Rowing Image">
+        <a class="button" href="https://github.com/magnusrathenborg" target="_blank">Visit My GitHub</a>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="hidden">
+        <h2>About Me</h2>
+        <p>Hi, I'm Magnus Rathenborg, a passionate rower and a tech enthusiast. I balance a life of sports, engineering, and creativity to bring the best of both worlds together. Follow along as I share my journey!</p>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="hidden">
+        <h2>Gallery</h2>
+        <div>
+            <img src="images/photo1.jpg" alt="Gallery Image 1">
+            <img src="images/photo2.jpg" alt="Gallery Image 2">
+            <img src="images/photo3.jpg" alt="Gallery Image 3">
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section id="video" class="hidden">
+        <h2>Watch Me in Action</h2>
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID" allowfullscreen></iframe>
+    </section>
 
     <!-- Footer -->
     <footer>
-        <p>
-            Created by Magnus Rathenborg &copy; 2024 | 
+        <p>Created by Magnus Rathenborg &copy; 2024 | 
             <a href="https://www.instagram.com/magnusrathenborg" target="_blank">Instagram</a> | 
             <a href="https://www.linkedin.com/in/magnusrathenborg" target="_blank">LinkedIn</a>
         </p>
     </footer>
+
+    <script>
+        // Intersection Observer for Animations
+        const sections = document.querySelectorAll('section');
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                    entry.target.classList.remove('hidden');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
 </body>
 </html>
