@@ -117,6 +117,42 @@
         .slider-arrow.right {
             right: 10px;
         }
+
+        /* Section Header */
+        .gallery-header {
+            text-align: center;
+            padding: 50px 20px;
+        }
+        .gallery-header h1 {
+            font-size: 2.5rem;
+            color: #1b1f38;
+            margin: 0 0 10px;
+        }
+        .gallery-header p {
+            font-size: 1.2rem;
+            color: #555;
+            margin: 0;
+        }
+
+        /* Image Grid */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 50px 20px;
+        }
+        .image-grid img {
+            width: 100%;
+            border-radius: 10px;
+            transform: scale(0.7);
+            opacity: 0;
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+        .image-grid img.show {
+            transform: scale(1);
+            opacity: 1;
+        }
+              
     </style>
 </head>
 <body>
@@ -138,6 +174,23 @@
         <button class="slider-arrow left" onclick="prevSlide()">&#10094;</button>
         <button class="slider-arrow right" onclick="nextSlide()">&#10095;</button>
     </div>
+
+    <!-- Section Header -->
+    <div class="gallery-header">
+        <h1>My Rowing Journey in Pictures</h1>
+        <p>Highlights of moments that define my career and passion for rowing.</p>
+    </div>
+
+    <!-- Image Grid -->
+    <div class="image-grid">
+        <img src="images/rofoto10.jpg" alt="Training Session">
+        <img src="images/rofoto11.jpg" alt="Team Gathering">
+        <img src="images/rofoto12.jpg" alt="Rowing Event 1">
+        <img src="images/rofoto13.jpg" alt="Rowing Event 2">
+        <img src="images/rofoto14.jpg" alt="Podium Moment">
+        <img src="images/rofoto15.jpg" alt="Nature Rowing">
+    </div>
+
 
     <script>
         // JavaScript for Slider Navigation
@@ -166,6 +219,26 @@
 
         // Initialize the first slide
         showSlide(currentSlide);
+
+
+         // JavaScript to Handle Scroll Animation
+        const images = document.querySelectorAll('.image-grid img');
+
+        const handleScroll = () => {
+            images.forEach(image => {
+                const rect = image.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    image.classList.add('show');
+                } else {
+                    image.classList.remove('show');
+                }
+            });
+        };
+
+        window.addEventListener('scroll', handleScroll);
+
+        // Initial check to show images already in the viewport
+        handleScroll();
     </script>
 </body>
 </html>
