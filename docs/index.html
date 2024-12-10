@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Magnus Rathenborg - Professional Portfolio</title>
+    <title>Magnus Rathenborg - Homepage</title>
     <style>
         /* General Styles */
         body {
@@ -15,167 +15,157 @@
             overflow-x: hidden;
         }
 
-        /* Section Base Style */
-        section {
+        /* Slider Section */
+        .slider {
+            position: relative;
             width: 100%;
-            padding: 100px 20px;
-            text-align: center;
-            transition: opacity 0.5s ease, transform 0.5s ease;
-        }
-
-        /* Navigation Bar */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(27, 31, 56, 0.9);
-            z-index: 1000;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-            padding: 10px;
-        }
-        .menu-container {
-            display: flex;
-            align-items: center;
-            justify-content: flex-start;
-        }
-
-        /* Hamburger Icon */
-        .hamburger {
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 30px;
-            height: 20px;
-        }
-        .hamburger .line {
-            width: 100%;
-            height: 4px;
-            background: #3498db;
-            border-radius: 2px;
-            transition: transform 0.3s ease, opacity 0.3s ease;
-        }
-
-        /* Dropdown Menu */
-        .dropdown {
-            position: absolute;
-            top: 60px;
-            left: 10px;
-            background: #1b1f38;
-            width: 200px;
-            padding: 10px;
-            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-            border-radius: 5px;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateY(-20px);
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s ease;
-        }
-        .dropdown a {
-            color: #3498db;
-            text-decoration: none;
-            font-size: 16px;
-            padding: 5px 0;
-            transition: color 0.3s ease;
-        }
-        .dropdown a:hover {
-            color: #1abc9c;
-        }
-
-        /* Show Dropdown Menu */
-        .dropdown.show {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        /* Hero Section */
-        #hero {
             height: 100vh;
-            background: linear-gradient(to bottom, #1b1f38, #2c3e50);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            overflow: hidden;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            animation: zoomEffect 8s infinite;
+        }
+
+        /* Animation for the Zoom Effect */
+        @keyframes zoomEffect {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .slide:nth-child(1) {
+            background-image: url('rofoto1.jpg');
+            animation-delay: 0s;
+        }
+
+        .slide:nth-child(2) {
+            background-image: url('rofoto2.jpg');
+            animation-delay: 2.7s;
+        }
+
+        .slide:nth-child(3) {
+            background-image: url('rofoto3.jpg');
+            animation-delay: 5.4s;
+        }
+
+        /* Slide Text */
+        .slider-text {
+            position: absolute;
+            bottom: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
             color: white;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
         }
-        #hero h1 {
-            font-size: 3em;
-            color: #1abc9c;
-            margin-bottom: 10px;
+
+        .slider-text h1 {
+            font-size: 3rem;
+            margin: 0;
         }
-        #hero p {
-            font-size: 1.2em;
-            margin: 0 20px;
+
+        .slider-text p {
+            font-size: 1.2rem;
+            margin: 10px 0;
         }
-        #hero img {
-            width: 200px;
-            border-radius: 50%;
-            margin-top: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .button {
-            margin-top: 20px;
-            padding: 12px 25px;
+
+        .slider-text .button {
+            padding: 10px 20px;
             background-color: #3498db;
             color: white;
-            border-radius: 25px;
+            border-radius: 5px;
             text-decoration: none;
-            font-weight: bold;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transition: background-color 0.3s ease;
+            font-size: 1rem;
+            margin-top: 10px;
+            display: inline-block;
         }
-        .button:hover {
+
+        .slider-text .button:hover {
             background-color: #1abc9c;
+        }
+
+        /* Navigation Arrows */
+        .slider-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            font-size: 2rem;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        .slider-arrow.left {
+            left: 10px;
+        }
+
+        .slider-arrow.right {
+            right: 10px;
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav>
-        <div class="menu-container">
-            <!-- Hamburger Icon -->
-            <div class="hamburger" onclick="toggleMenu()">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
-            </div>
+    <!-- Slider Section -->
+    <div class="slider">
+        <!-- Individual Slides -->
+        <div class="slide"></div>
+        <div class="slide"></div>
+        <div class="slide"></div>
 
-            <!-- Dropdown Menu -->
-            <div id="dropdown-menu" class="dropdown">
-                <a href="#hero">Home</a>
-                <a href="#about">About</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#video">Video</a>
-            </div>
+        <!-- Text Overlay -->
+        <div class="slider-text">
+            <h1>Welcome to Magnus Rathenborg</h1>
+            <p>A national rower pursuing excellence on and off the water.</p>
+            <a href="#about" class="button">Learn More</a>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="hero">
-        <h1>Welcome to My Professional Page</h1>
-        <p>A journey through rowing, life, and technology.</p>
-        <img src="images/IMG_7449.jpg" alt="Rowing Image">
-        <a class="button" href="https://github.com/magnusrathenborg" target="_blank">Visit My GitHub</a>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>Created by Magnus Rathenborg &copy; 2024 | 
-            <a href="https://www.instagram.com/magnusrathenborg" target="_blank">Instagram</a> | 
-            <a href="https://www.linkedin.com/in/magnusrathenborg" target="_blank">LinkedIn</a>
-        </p>
-    </footer>
+        <!-- Navigation Arrows -->
+        <button class="slider-arrow left" onclick="prevSlide()">&#10094;</button>
+        <button class="slider-arrow right" onclick="nextSlide()">&#10095;</button>
+    </div>
 
     <script>
-        // Function to Toggle Dropdown Menu
-        function toggleMenu() {
-            const dropdownMenu = document.getElementById("dropdown-menu");
-            dropdownMenu.classList.toggle("show");
+        // JavaScript for Slider Navigation
+        const slides = document.querySelectorAll('.slide');
+        let currentSlide = 0;
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.style.opacity = i === index ? '1' : '0';
+                slide.style.zIndex = i === index ? '1' : '-1';
+            });
         }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // Auto-slide every 8 seconds
+        setInterval(nextSlide, 8000);
+
+        // Initialize the first slide
+        showSlide(currentSlide);
     </script>
 </body>
 </html>
